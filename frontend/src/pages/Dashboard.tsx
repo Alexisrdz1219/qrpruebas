@@ -83,12 +83,81 @@
 //             </div>
 //           </div>
 
-          
+          {/* INDICADORES (KPIs) - Ocupan toda la fila horizontal */}
+          {/* <div className="row g-3 mb-4 text-white text-center">
+            <div className="col-md-3">
+              <div className="p-4 rounded-3 shadow-sm bg-primary h-100">
+                <small className="opacity-75 uppercase d-block mb-1">Total Refacciones</small>
+                <h2 className="fw-bold mb-0">4,128</h2>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="p-4 rounded-3 shadow-sm bg-warning text-dark h-100">
+                <small className="opacity-75 uppercase d-block mb-1">Stock Crítico</small>
+                <h2 className="fw-bold mb-0">23</h2>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="p-4 rounded-3 shadow-sm bg-info h-100">
+                <small className="opacity-75 uppercase d-block mb-1">Máquinas Activas</small>
+                <h2 className="fw-bold mb-0">14</h2>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="p-4 rounded-3 shadow-sm bg-success h-100">
+                <small className="opacity-75 uppercase d-block mb-1">Efectividad</small>
+                <h2 className="fw-bold mb-0">98%</h2>
+              </div>
+            </div>
+          </div> */}
 
-//         </main>
-//       </div>
+          {/* REPORTE DE MANTENIMIENTO (Campos de tu dibujo en la libreta) */}
+          {/* <div className="row mb-4">
+            <div className="col-12">
+              <div className="card border-0 shadow-sm rounded-3 overflow-hidden">
+                <div className="card-header bg-white py-3">
+                  <h5 className="mb-0 fw-bold text-secondary">Último Registro: Lemco Mantenimiento (ASB 8)</h5>
+                </div>
+                <div className="card-body">
+                  <div className="row g-3">
+                    <div className="col-md-3"><strong>Mecánico:</strong> Ricardo Pérez</div>
+                    <div className="col-md-3"><strong>Supervisor:</strong> Juan Martínez</div>
+                    <div className="col-md-3"><strong>Horas Máquina:</strong> 1,250 hrs</div>
+                    <div className="col-md-3"><strong>Haccp:</strong> Cumple</div>
+                  </div>
+                  <hr />
+                  <table className="table table-bordered mt-3 text-center align-middle">
+                    <thead className="table-light text-uppercase small">
+                      <tr>
+                        <th>Acción / Nombre</th>
+                        <th>Descripción</th>
+                        <th>Foto Antes / Después</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cambio de Filtro</td>
+                        <td>Se reemplaza filtro saturado por preventivo.</td>
+                        <td>
+                          <div className="d-flex gap-1 justify-content-center">
+                            <div className="bg-light border" style={{width: '50px', height: '50px'}}></div>
+                            <div className="bg-light border" style={{width: '50px', height: '50px'}}></div>
+                          </div>
+                        </td>
+                        <td>✅ Listo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div> */}
 
-//       {/* Estilos estándar de React (sin el atributo jsx) */}
+        {/* </main>
+      </div>
+
+      {/* Estilos estándar de React (sin el atributo jsx) */}
 //       <style>
 //         {`
 //           .nav-link { transition: 0.2s; color: rgba(255,255,255,0.7); }
@@ -99,119 +168,86 @@
 //       </style>
 //     </div>
 //   );
-// }
+// } */}
+
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function DashboardLemcoFull() {
   return (
-    <div className="d-flex min-vh-100 w-100" style={{ backgroundColor: "#f8f9fa" }}>
+    <div className="d-flex vh-100 vw-100 overflow-hidden" style={{ backgroundColor: "#f0f2f5" }}>
       
-      {/* 1. SIDEBAR - Solo visible en Escritorio (lg) */}
-      {/* <nav className="d-none d-lg-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{ width: "280px" }}>
-        <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <span className="fs-4 fw-bold text-success">IEMCO <small className="fs-6 opacity-50">v1.0</small></span>
-        </a>
-        <hr />
-        <ul className="nav nav-pills flex-column mb-auto">
-          <li className="nav-item">
-            <Link to="/" className="nav-link active">Panel Principal</Link>
-          </li>
-          <li><Link to="/inventario" className="nav-link text-white">Inventario</Link></li>
-          <li><Link to="/reportes" className="nav-link text-white">Reportes</Link></li>
-        </ul>
-      </nav> */}
-
-      {/* 2. CONTENIDO PRINCIPAL */}
-      <div className="fd-flex vh-100 vw-100 overflow-hidden">
+      {/* CONTENIDO PRINCIPAL */}
+      <div className="flex-grow-1 d-flex flex-column overflow-auto">
         
-        {/* TOPBAR - Adaptable */}
-        <header className="navbar bg-white border-bottom px-3 py-3 sticky-top shadow-sm">
-          <div className="container-fluid">
-            {/* Título adaptable */}
+        {/* TOPBAR RESPONSIVA */}
+        <header className="navbar navbar-expand bg-white border-bottom px-3 px-md-4 py-3 sticky-top shadow-sm w-100">
+          <div className="container-fluid px-0 d-flex flex-wrap justify-content-between align-items-center">
+            
             <div className="d-flex align-items-center">
-              <span className="d-lg-none fs-5 fw-bold text-success me-2">IEMCO</span>
-              <h5 className="mb-0 fw-bold d-none d-sm-block text-secondary">Panel de Control</h5>
+              <span className="fs-4 fw-bold text-success">IEMCO <small className="fs-6 text-success-50 d-none d-sm-inline">v1.0</small></span>
             </div>
 
-            {/* Buscador y Botón */}
-            <div className="d-flex align-items-center gap-2 gap-md-3">
+            {/* Buscador e íconos: En móviles se apilan o ajustan */}
+            <div className="ms-auto d-flex align-items-center gap-2 gap-md-3 mt-2 mt-sm-0">
               <input 
                 type="search" 
-                className="form-control form-control-sm d-none d-md-block" 
-                placeholder="Buscar refacción..." 
-                style={{ width: '200px' }} 
+                className="form-control form-control-sm form-control-md" 
+                placeholder="Buscar..." 
+                style={{ maxWidth: '150px' }} 
               />
-              <button className="btn btn-sm btn-dark position-relative px-3">
-                Stock <span className="badge bg-danger ms-1">4</span>
+              <button type="button" className="btn btn-dark btn-sm btn-md position-relative">
+                Stock
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  4+
+                </span>
               </button>
             </div>
           </div>
         </header>
 
-        {/* CONTENIDO DEL DASHBOARD */}
-        <main className="p-3 p-md-4 p-lg-5">
+        {/* MAIN CONTENT */}
+        <main className="container-fluid p-3 p-md-4">
           
-          {/* CARD DE BIENVENIDA / OPERACIONES */}
-          <div className="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
-            <div className="row g-0">
-              <div className="col-md-8 p-4">
-                <h2 className="fw-bold mb-1">¡Bienvenido de nuevo!</h2>
-                <p className="text-muted mb-4">Gestiona el inventario y las refacciones de IEMCO de forma eficiente.</p>
-                
-                {/* Botones: Se apilan en móvil, se alinean en Web */}
-                <div className="d-grid d-sm-flex gap-3">
-                  <Link to="/nueva" className="btn btn-success btn-lg px-4 fw-bold shadow-sm">
-                    + Registrar Refacción
-                  </Link>
-                  <Link to="/inventario" className="btn btn-outline-dark btn-lg px-4">
-                    Ver Inventario
-                  </Link>
+          {/* SECCIÓN DE OPERACIONES RESPONSIVA */}
+          <div className="row mb-4">
+            <div className="col-12">
+              <div className="bg-white p-3 p-md-4 rounded-3 shadow-sm d-flex flex-column flex-md-row align-items-md-center justify-content-between border-start border-success border-5">
+                <div className="mb-3 mb-md-0">
+                  <h3 className="mb-1 fw-bold fs-4 fs-md-3">Operaciones Rápidas</h3>
+                  <p className="text-muted mb-0 d-none d-sm-block">Gestión de activos en tiempo real.</p>
                 </div>
-              </div>
-              {/* Imagen decorativa solo visible en pantallas grandes */}
-              <div className="col-md-4 d-none d-md-flex align-items-center justify-content-center bg-light">
-                <div className="text-success opacity-25">
-                  <i className="bi bi-tools" style={{ fontSize: "5rem" }}></i>
+                
+                {/* Botones que ocupan el ancho total en móvil */}
+                <div className="d-grid d-md-flex gap-2">
+                  <Link to="/nueva" className="btn btn-success px-4 shadow">
+                    Registrar Refacción
+                  </Link>
+                  <Link to="/inventario" className="btn btn-outline-dark px-4">
+                    Inventario
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* GRID DE ESTADÍSTICAS (4 columnas en Web, 2 en Tablet, 1 en Móvil) */}
-          <div className="row g-3">
-            {[
-              { label: "Total Refacciones", value: "1,240", color: "primary" },
-              { label: "Bajo Stock", value: "8", color: "danger" },
-              { label: "Entradas hoy", value: "15", color: "success" },
-              { label: "Salidas hoy", value: "3", color: "info" }
-            ].map((item, index) => (
-              <div key={index} className="col-6 col-md-4 col-lg-3">
-                <div className="card border-0 shadow-sm p-3 h-100 border-bottom border-4" style={{ borderColor: `var(--bs-${item.color})` }}>
-                  <small className="text-muted text-uppercase fw-bold" style={{ fontSize: '0.7rem' }}>{item.label}</small>
-                  <div className="fs-3 fw-bold">{item.value}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
+          {/* Aquí podrías agregar más filas/grids de contenido */}
+          
         </main>
       </div>
 
       <style>
         {`
-          /* Transiciones suaves */
-          .nav-link { transition: all 0.3s; border-radius: 8px; margin-bottom: 5px; }
-          .nav-link:hover { background: rgba(255,255,255,0.1); }
-          .card { transition: transform 0.2s; }
-          .card:hover { transform: translateY(-3px); }
+          .nav-link { transition: 0.2s; color: rgba(255,255,255,0.7); }
+          .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+          .nav-link.active { background-color: #0dcaf0 !important; color: #000 !important; font-weight: bold; }
           
-          /* Ajuste para que los botones en móvil sean fáciles de tocar */
+          /* Ajuste para que el input no se coma toda la pantalla en móvil */
           @media (max-width: 576px) {
-            .btn-lg {
-              padding: 12px;
-              font-size: 1rem;
+            .navbar .container-fluid {
+              flex-direction: row;
             }
+            h3 { font-size: 1.25rem; }
           }
         `}
       </style>
